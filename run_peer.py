@@ -43,7 +43,7 @@ def main(config_file):
         np.corrcoef(y_hat[~np.isnan(ytarget)], ytarget[~np.isnan(ytarget)])[0][1]
     )  # print correlation in y
     np.savetxt(
-        "results.csv",
+        config["output_name"],
         np.stack([x_hat, y_hat]).T,
         header="x,y",
         delimiter=",",
@@ -72,6 +72,8 @@ def read_config(config_file):
         except yaml.YAMLError as e:
             print(e)
     for k, v in config.items():
+        if k == "output_name":
+            continue
         if not Path(v).exists():
             print("%s does not exist" % k)
             raise FileNotFoundError

@@ -7,3 +7,4 @@ test_image: forrest_preprocess/sub-01/ses-movie/output/sub-01_ses-movie_task-mov
 test_target_x: train_test_data/test_data/subject_1_run_3_true_x.csv
 test_target_y: train_test_data/test_data/subject_1_run_3_true_y.csv
 eye_mask: PEER_eye_2mm_r30.nii.gz
+output_name: results_subject_1_run3.csv
